@@ -1,0 +1,38 @@
+! This is your .Xresources file, some X applications use this for their
+! configuration. Comments start with a exclamation sign. To reload this
+! file run: `xrdb ~/.Xresources`
+
+! Color Scheme
+XTerm*foreground: #CCCCEE
+XTerm*background: #101523
+
+! The first color is the non-bold one, the second is the bold one.
+
+!black
+XTerm*color0:  #000000
+XTerm*color8:  #8B8BAB
+!red
+XTerm*color1:  #85330C
+XTerm*color9:  #D25014
+!green (light blue)
+XTerm*color2:  #445EA2
+XTerm*color10: #A5B4D9
+!yellow
+XTerm*color3:  #C4B529
+XTerm*color11: #D2BF14
+!blue
+XTerm*color4:  #112659
+XTerm*color12: #295AD5
+!magenta
+XTerm*color5:  #475476
+XTerm*color13: #6878A1
+!cyan
+XTerm*color6:  #304B8E
+XTerm*color14: #254BAD
+!white
+XTerm*color7:  #AAAABB
+XTerm*color15: #DDDDFF
+
+!other options
+XTerm*font: fixed
+XTerm*boldFont: fixed
