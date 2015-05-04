@@ -1,0 +1,35 @@
+Config { font = "-*-Fixed-R-Normal-*-13-*-*-*-*-*-*-*"
+        , borderColor = "black"
+        , border = TopB
+        , bgColor = "#050f2a"
+        , fgColor = "#445fa2"
+        , position = TopW L 100
+        , commands = [ Run Weather "EHRD" ["-t","<fc=#D2BF14><tempC></fc>C"] 36000
+                        --, Run Network "eth0" ["-L","0","-H","1024","--normal","#D2BF14","--high","#D25014"] 10
+                        --, Run Network "eth1" ["-L","0","-H","32","--normal","#D2BF14","--high","#D25014"] 10
+                        , Run Com "cat" ["/home/pieter/.XmobarValues/EthernetDataDn"] "ethdown" 10
+                        , Run Com "cat" ["/home/pieter/.XmobarValues/EthernetDataUp"] "ethup" 10
+                        , Run Cpu ["-L","0","-H","50","--normal","#D2BF14","--high","#D25014"] 10
+                        --, Run CatInt 0 "/home/pieter/.XmobarValues/HDDPowerOnHours" [] 90
+                        , Run Com "cat" ["/home/pieter/.XmobarValues/HDDPowerOnHours"] "poweron" 30
+                        , Run Com "cat" ["/home/pieter/.XmobarValues/WarningValue"] "warning" 30
+                        , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                        , Run Uptime ["-t","Up: <fc=#D2BF14><days></fc>d <fc=#D2BF14><hours></fc>h <fc=#D2BF14><minutes></fc>m"] 60
+                        --, Run Com "uptime" [] "up" 1
+                        , Run Locks
+                        , Run StdinReader
+                        --, Run Memory [] 1
+                        --, Run Memory ["-t","Mem: <usedratio>"] 10 
+                        --, Run Memory         [ "--template" ,"Mem: <used>/<total>MB"
+                        --     , "--Low"      , "1000"        -- units: MB
+                        --     , "--High"     , "6000"        -- units: MB
+                        --     , "--low"      , "darkgreen"
+                        --     , "--normal"   , "darkorange"
+                        --     , "--high"     , "darkred"
+                        --     ] 10
+                        , Run Memory ["-t","Mem: <used>MB"] 100
+                        ]
+        , sepChar = "%"
+        , alignSep = "}{"
+        , template = "<fc=#D2BF14>%locks%</fc> | HDD Hours: <fc=#D2BF14>%poweron%</fc> | HDD Warning: <fc=#D2BF14>%warning%</fc> | %uptime% | Dn: <fc=#D2BF14>%ethdown%</fc>GB, Up: <fc=#D2BF14>%ethup%</fc>GB | %cpu% }{<fc=#D2BF14>%date%</fc> | %EHRD%"
+        }
