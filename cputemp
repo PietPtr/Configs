@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sensors -u | grep temp1_input: | tail -1 | awk '{print $2}' | cut -d "." -f1
