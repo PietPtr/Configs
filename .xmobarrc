@@ -3,26 +3,30 @@ Config { font = "-*-Fixed-R-Normal-*-13-*-*-*-*-*-*-*"
         , persistent = True
         , allDesktops = True
         , border = TopB
-        , bgColor = "#050f2a"
-        , fgColor = "#445fa2"
+        , bgColor = "#070913"--"#0C1021"
+        , fgColor = "#F8F8F8"
         , position = TopW L 100
-        , commands = [ Run Weather "EHRD" ["-t","<fc=#D2BF14><tempC></fc>C"] 36000
-                        --, Run Network "eth0" ["-L","0","-H","1024","--normal","#D2BF14","--high","#D25014"] 10
-                        , Run Com "cat" ["/home/pieter/.XmobarValues/EthernetDataDn"] "ethdown" 10
-                        , Run Com "cat" ["/home/pieter/.XmobarValues/EthernetDataUp"] "ethup" 10
-                        , Run Cpu ["-L","0","-H","50","--normal","#D2BF14","--high","#D25014"] 10
-                        , Run Com "cat" ["/home/pieter/.XmobarValues/HDDPowerOnHours"] "poweron" 30
-                        , Run Com "cat" ["/home/pieter/.XmobarValues/WarningValue"] "warning" 30
+        , commands = [ Run Weather "EHRD" ["-t","<fc=#61ce3c><tempC></fc>C"] 36000
+                        --, Run Network "eth0" ["-L","0","-H","1024","--normal","#FF6400","--high","#D25014"] 10
+                        --, Run Com "cat" ["/home/pieter/.XmobarValues/EthernetDataDn"] "ethdown" 10
+                        --, Run Com "cat" ["/home/pieter/.XmobarValues/EthernetDataUp"] "ethup" 10
+                        , Run Cpu ["-L","0","-H","50","--normal","#f8f8f8","--high","#ff6400"] 10
+                        --, Run Com "cat" ["/home/pieter/.XmobarValues/HDDPowerOnHours"] "poweron" 30
+                        --, Run Com "cat" ["/home/pieter/.XmobarValues/WarningValue"] "warning" 30
                         , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
-                        , Run Uptime ["-t","Up: <fc=#D2BF14><days></fc>d <fc=#D2BF14><hours></fc>h <fc=#D2BF14><minutes></fc>m"] 60
+                        , Run Uptime ["-t","Up: <fc=#ff6400><days></fc>d <fc=#ff6400><hours></fc>h <fc=#ff6400><minutes></fc>m"] 60
                         , Run Locks
                         , Run StdinReader
                         , Run Memory ["-t","Mem: <used>MB"] 100
                         , Run Com "cat" ["/home/pieter/.XmobarValues/totalStorage"] "totalStore" 10
-                        , Run Com "cat" ["/home/pieter/.XmobarValues/full"] "fullStore" 10
-                        , Run CoreTemp [] 10
-                        ]
+                        , Run Com "get-storage" [] "fullStore" 10
+                        , Run Com "cat" ["/home/pieter/.XmobarValues/totalMemory"] "totalMem" 10
+                        , Run Com "cat" ["/home/pieter/.XmobarValues/usedMemory"] "usedMem" 10
+                        , Run Com "cputemp" [] "cpuTemp" 10
+                        , Run Com "gputemp" [] "gpuTemp" 10
+			, Run CoreTemp [] 10
+			]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "<fc=#D2BF14>%locks%</fc> | %uptime% | Dn: <fc=#D2BF14>%ethdown%</fc>GB, Up: <fc=#D2BF14>%ethup%</fc>GB | <fc=#D2BF14>%fullStore%</fc>GB/<fc=#D2BF14>%totalStore%</fc>GB | %cpu% }{<fc=#D2BF14>%date%</fc> | %EHRD%"
+        , template = "%uptime% | <fc=#fbde2d>%fullStore%</fc>GB/<fc=#fbde2d>%totalStore%</fc>GB | <fc=#61ce3c>%usedMem%</fc>MB | CPU: <fc=#7a96fa>%cpuTemp%</fc>C | GPU: <fc=#8da6ce>%gpuTemp%</fc>C | %cpu% | <fc=#f8f8f8>%locks%</fc> }{ | <fc=#fbde2d>%date%</fc> | %EHRD%"
         }

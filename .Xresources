@@ -3,36 +3,36 @@
 ! file run: `xrdb ~/.Xresources`
 
 ! Color Scheme
-XTerm*foreground: #CCCCEE
-XTerm*background: #101523
+XTerm*foreground: #f8f8f8
+XTerm*background: #0c1021
 
 ! The first color is the non-bold one, the second is the bold one.
 
 !black
-XTerm*color0:  #000000
-XTerm*color8:  #8B8BAB
+XTerm*color0:  #070a14
+XTerm*color8:  #8b8bAb
 !red
-XTerm*color1:  #85330C
-XTerm*color9:  #D25014
-!green (light blue)
-XTerm*color2:  #445EA2
-XTerm*color10: #A5B4D9
+XTerm*color1:  #ff6400
+XTerm*color9:  #ff751c
+!green
+XTerm*color2:  #61ce3c
+XTerm*color10: #7ad65c
 !yellow
-XTerm*color3:  #C4B529
-XTerm*color11: #D2BF14
+XTerm*color3:  #fbde2d
+XTerm*color11: #fce555
 !blue
-XTerm*color4:  #112659
-XTerm*color12: #295AD5
+XTerm*color4:  #8da6ce
+XTerm*color12: #a9bcda
 !magenta
-XTerm*color5:  #475476
-XTerm*color13: #6878A1
+XTerm*color5:  #d8fa3c
+XTerm*color13: #e0fb65
 !cyan
-XTerm*color6:  #304B8E
-XTerm*color14: #254BAD
+XTerm*color6:  #7a96fa
+XTerm*color14: #9db1fb
 !white
-XTerm*color7:  #AAAABB
-XTerm*color15: #DDDDFF
+XTerm*color7:  #f6f6f6
+XTerm*color15: #ffffff
 
 !other options
 XTerm*font: fixed
-XTerm*boldFont: fixed
+!XTerm*boldFont: fixed
