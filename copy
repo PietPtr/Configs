@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mkdir ~/.xmonad -p
+cp xmonad/* ~/.xmonad/
+
+cp bin ~/bin -r
+
+cp home/* ~/
