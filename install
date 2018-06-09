@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo apt update
+sudo apt upgrade
+sudo apt install xmonad git xterm chromium-browser xmobar feh suckless-tools
+git clone https://github.com/PietPtr/configs
+cd XmonadFiles/
+cp .xmobarrc ~/
+cp xmonad.hs ~/.xmonad
